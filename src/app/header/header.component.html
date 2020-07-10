@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+  <a class="navbar-brand">Recipes Book</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/" *ngIf="isAuth" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Recipes</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/auth" *ngIf="!isAuth" routerLinkActive="active">Authentication</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/shopping-list" routerLinkActive="active">
+          Ingredients List
+          <span class="badge badge-info">{{ingCount}}</span>
+        </a>
+      </li>
+    </ul>
+    <ul class="navbar navbar-nav" *ngIf="isAuth">
+      <li class="nav-item dropdown" appDropdown>
+          <a class="nav-link dropdown-toggle" style="cursor: pointer;" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{name}}
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <button class="btn btn-danger btn-block" (click)="onLogOut()" >Logout</button>
+          </div>
+        </li>
+    </ul>
+  </div>
+</div>
+</nav>

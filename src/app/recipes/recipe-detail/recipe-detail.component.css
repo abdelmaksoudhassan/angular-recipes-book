@@ -1,0 +1,13 @@
+.recborder{
+    margin: 20px;
+}
+.img-res{
+    max-width: 500px;
+    max-height: 500px;
+}
+@media(max-width:800px){
+    .img-res{
+        max-width: 290px;
+        max-height: 290px;
+    }
+}

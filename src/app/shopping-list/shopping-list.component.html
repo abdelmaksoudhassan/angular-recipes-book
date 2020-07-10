@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row" style="margin: 30px 0px;">
+    <div class="col-md-6">
+      <app-shopping-edit></app-shopping-edit>
+    </div>
+    <div class="col">
+      <h4>Once you click on any list item</h4>
+      <h5>You can Edit Or Remove this item..</h5>
+      <ul class="list-group">
+        <a
+          class="list-group-item"
+          style="cursor: pointer"
+          *ngFor="let ingredient of ingredients; let i = index"
+          (click)="onEditItem(i)"
+        >
+          {{ ingredient.name }} with amount ({{ ingredient.amount }})
+        </a>
+      </ul>
+    </div>
+  </div>
+</div>
